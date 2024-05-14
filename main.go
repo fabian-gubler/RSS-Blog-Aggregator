@@ -23,6 +23,8 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /admin/metrics", apiCfg.handlerMetrics)
+	mux.HandleFunc("GET /v1/readiness", apiCfg.handlerReadiness)
+	mux.HandleFunc("GET /v1/err", apiCfg.handlerErr)
 
 	srv := &http.Server{
 		Addr:    ":" + port,
