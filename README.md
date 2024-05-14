@@ -19,3 +19,9 @@ Create a gitignore'd .env file in the root of your project and add the following
 `PORT="8080"`
 
 This file will automatically be loaded using `godotenv.Load()` in the main function.
+
+## Usage
+
+Run and test the server:
+
+`go build -o out && ./out`
