@@ -1,6 +1,6 @@
-# RSS-Blog-Aggregator
+# RSSFlow: RSS Blog Aggregator
 
-RSS feed aggregator built in Go! It's a web server that allows clients to:
+RSSFlow is a RSS feed aggregator built in Go! It's a web server that allows clients to:
 
 - Add RSS feeds to be collected
 - Follow and unfollow RSS feeds that other users have added
