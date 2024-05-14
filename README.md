@@ -11,3 +11,11 @@ RSSFlow is a RSS feed aggregator built in Go! It's a web server that allows clie
 - Learn how to integrate a Go server with PostgreSQL
 - Learn about the basics of database migrations
 - Learn about long-running service workers
+
+## Setup
+
+Create a gitignore'd .env file in the root of your project and add the following:
+
+`PORT="8080"`
+
+This file will automatically be loaded using `godotenv.Load()` in the main function.
