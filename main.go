@@ -42,6 +42,7 @@ func main() {
 	mux.HandleFunc("GET /v1/readiness", apiCfg.handlerReadiness)
 	mux.HandleFunc("GET /v1/err", apiCfg.handlerErr)
 	mux.HandleFunc("POST /v1/users", apiCfg.handlerCreateUser)
+	mux.HandleFunc("DELETE /v1/users/all", apiCfg.handlerDeleteAllUsers)
 
 	srv := &http.Server{
 		Addr:    ":" + port,
