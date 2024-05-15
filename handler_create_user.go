@@ -40,6 +40,13 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
+	// Check if User exists
+	userChecked, err := cfg.DB.GetUser(context.Background(), params.Name)
+	if userChecked != (database.User{}) {
+		respondWithError(w, http.StatusBadRequest, "User already exists")
+		return
+	}
+
 	// Generate UUID for User
 	newUUID, err := uuid.NewRandom()
 	if err != nil {
