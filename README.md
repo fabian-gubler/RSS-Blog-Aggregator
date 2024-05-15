@@ -25,3 +25,17 @@ This file will automatically be loaded using `godotenv.Load()` in the main funct
 Run and test the server:
 
 `go build -o out && ./out`
+
+## Connect to Database
+
+Test your connection string by running psql, for example:
+
+```sh
+psql "postgres://username:password@host:port/database"`
+```
+
+In my case, I am using:
+
+```sh
+psql "postgres://postgres:@localhost:5555/blogator"
+```
