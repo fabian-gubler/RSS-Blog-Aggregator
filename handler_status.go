@@ -17,8 +17,5 @@ func (cfg *apiConfig) handlerReadiness(w http.ResponseWriter, r *http.Request) {
 }
 
 func (cfg *apiConfig) handlerErr(w http.ResponseWriter, r *http.Request) {
-
-	respondWithJSON(w, http.StatusInternalServerError, Error{
-		Error: "Internal Server error",
-	})
+	respondWithError(w, http.StatusInternalServerError, "Internal Server error")
 }
