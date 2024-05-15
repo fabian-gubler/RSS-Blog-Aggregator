@@ -14,11 +14,21 @@ RSSFlow is a RSS feed aggregator built in Go! It's a web server that allows clie
 
 ## Setup
 
+### Configuration
+
 Create a gitignore'd .env file in the root of your project and add the following:
 
 `PORT="8080"`
 
 This file will automatically be loaded using `godotenv.Load()` in the main function.
+
+### Setting up the environment
+
+To install the correct packages and corresponding version, use the nix supplied nix flake and make sure that flakes are enabled.
+
+In order to use it, run:
+
+`nix develop`
 
 ## Usage
 
@@ -27,6 +37,8 @@ Run and test the server:
 `go build -o out && ./out`
 
 ## Connect to Database
+
+**Testing Connection:**
 
 Test your connection string by running psql, for example:
 
@@ -38,4 +50,10 @@ In my case, I am using:
 
 ```sh
 psql "postgres://postgres:@localhost:5555/blogator"
+```
+
+**Run the Migration:**
+
+```sh
+goose postgres postgres://postgres:@localhost:5555/blogator up
 ```
