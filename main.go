@@ -41,6 +41,7 @@ func main() {
 	mux.HandleFunc("GET /admin/metrics", apiCfg.handlerMetrics)
 	mux.HandleFunc("GET /v1/readiness", apiCfg.handlerReadiness)
 	mux.HandleFunc("GET /v1/err", apiCfg.handlerErr)
+	mux.HandleFunc("GET /v1/users", apiCfg.handlerGetUser)
 	mux.HandleFunc("POST /v1/users", apiCfg.handlerCreateUser)
 	mux.HandleFunc("DELETE /v1/users/all", apiCfg.handlerDeleteAllUsers)
 
