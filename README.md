@@ -54,6 +54,8 @@ psql "postgres://postgres:@localhost:5555/blogator"
 
 **Run the Migration:**
 
+To migrate, enter `sql` directory and run:
+
 ```sh
 goose postgres postgres://postgres:@localhost:5555/blogator up
 ```
