@@ -30,7 +30,7 @@ After testing the connection, explained below, add the connection string to the 
 
 Don't forget to change username, password, port and database names.
 
-`CONN=protocol://username:password@host:port/database?sslmode=disable`
+`CONN=postgres://postgres:@localhost:5555/blogator?sslmode=disable`
 
 
 ### Setting up the environment
