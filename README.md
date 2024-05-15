@@ -16,11 +16,22 @@ RSSFlow is a RSS feed aggregator built in Go! It's a web server that allows clie
 
 ### Configuration
 
+**1. Define Port**
+
 Create a gitignore'd .env file in the root of your project and add the following:
 
 `PORT="8080"`
 
 This file will automatically be loaded using `godotenv.Load()` in the main function.
+
+**2. Connection String:**
+
+After testing the connection, explained below, add the connection string to the .env file.
+
+Don't forget to change username, password, port and database names.
+
+`CONN=protocol://username:password@host:port/database?sslmode=disable`
+
 
 ### Setting up the environment
 
