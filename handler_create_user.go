@@ -9,7 +9,7 @@ import (
 
 	"github.com/fabian-gubler/RSSFlow/internal/database"
 	"github.com/google/uuid"
-	_ "github.com/lib/pq" 
+	_ "github.com/lib/pq"
 )
 
 type UserParams struct {
@@ -17,6 +17,7 @@ type UserParams struct {
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	Name      string
+	ApiKey    string
 }
 
 type UserResponse struct {
@@ -24,6 +25,7 @@ type UserResponse struct {
 	CreatedAt string    `json:"created_at"`
 	UpdateAt  string    `json:"updated_at"`
 	Name      string    `json:"name"`
+	ApiKey    string    `json:"api_key"`
 }
 
 func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) {
@@ -74,5 +76,6 @@ func (cfg *apiConfig) handlerCreateUser(w http.ResponseWriter, r *http.Request) 
 		CreatedAt: user.CreatedAt.Format(time.RFC3339),
 		UpdateAt:  user.UpdatedAt.Format(time.RFC3339),
 		Name:      user.Name,
+		ApiKey:    user.ApiKey,
 	})
 }
